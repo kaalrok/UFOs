@@ -1,6 +1,5 @@
 // from data.js
 const tableData = data;
-console.log(tableData);
 
 // get table references
 var tbody = d3.select("tbody");
@@ -43,9 +42,8 @@ function handleClick() {
     buildTable(filteredData);
 };
 
-
 // 1. Create a variable to keep track of all the filters as an object.
-filters = {}
+
 
 // 3. Use this function to update the filters. 
 function updateFilters() {
@@ -68,8 +66,8 @@ function updateFilters() {
 
 // 7. Use this function to filter the table when data is entered.
 function filterTable() {
-    console.log("test button")
-        // 8. Set the filtered data to the tableData.
+
+    // 8. Set the filtered data to the tableData.
 
 
     // 9. Loop through all of the filters and keep any data that
@@ -81,7 +79,9 @@ function filterTable() {
 }
 
 // 2. Attach an event to listen for changes to each filter
-d3.select("#filter-btn").on("click", filterTable);
+
+// Attach an event to listen for the form button
+d3.selectAll("#filter-btn").on("click", handleClick);
 
 // Build the table when the page loads
 buildTable(tableData);
